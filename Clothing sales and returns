@@ -1,1 +1,29 @@
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, item TEXT, quantity INTEGER, price REAL, sales INTEGER, returns INTEGER);
 
+INSERT INTO clothing VALUES (1, "blue dress", 20, 25.00, 5, 2);
+INSERT INTO clothing VALUES (2, "red tshirt", 30, 10.00, 25, 3);
+INSERT INTO clothing VALUES (3, "flower blouse", 15, 35.00, 3, 0);
+INSERT INTO clothing VALUES (4, "baseball cap", 40, 15.00, 14, 1);
+INSERT INTO clothing VALUES (5, "striped socks", 50, 7.50, 23, 5);
+INSERT INTO clothing VALUES (6, "denim shorts", 30, 25.00, 25, 15);
+INSERT INTO clothing VALUES (7, "overalls", 10, 45.00, 7, 0);
+INSERT INTO clothing VALUES (8, "green pants", 15, 27.00, 3, 1);
+INSERT INTO clothing VALUES (9, "white blazer", 25, 45.00, 24, 23);
+INSERT INTO clothing VALUES (10, "purple scarf", 10, 50.00, 3, 0);
+INSERT INTO clothing VALUES (11, "black sweater", 15, 25.00, 15, 0); 
+INSERT INTO clothing VALUES (12, "denim blazer", 10, 40.00, 1, 0);
+INSERT INTO clothing VALUES (13, "polka dot dress", 30, 55.00, 29, 4);
+INSERT INTO clothing VALUES (14, "green hoodie", 20, 20.00, 17, 9);
+INSERT INTO clothing VALUES (15, "striped PJ", 15, 35.00, 1, 0);
+
+--display the database order by price.
+SELECT * FROM clothing ORDER BY price DESC;
+
+--what are the top 5 most sold items?
+SELECT * FROM clothing ORDER BY sales DESC limit 5;
+
+--what are the top 4 most returned items?
+SELECT * FROM clothing WHERE returns >=5 order by returns desc limit 5; 
+
+-what area the top 5 most expensive items sold?
+SELECT * from clothing WHERE price >=15 and sales >= 10 order by returns desc limit 5
